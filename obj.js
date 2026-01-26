@@ -1,4 +1,4 @@
-function produtos(nome, preco, estoque){
+/*function produtos(nome, preco, estoque){
     this.nome = nome;
     this.preco = preco;
     this.estoque = estoque;
@@ -22,4 +22,8 @@ function produtos(nome, preco, estoque){
 const p1 = new produtos('camiseta', 20, 30);
 
 p1.estoque = 40
-console.log(p1.estoque);
+console.log(p1.estoque);*/
+let produto = {nome: 'caneca', preco: 24};
+console.log(Object.getOwnPropertyDescriptor(produto, 'nome'))
+
+
