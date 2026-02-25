@@ -1,8 +1,14 @@
 const express = require('express')
 const app = express() 
 const routes = require('./routes')
+const path = require('path')
 
 app.use(express.urlencoded({extended: true}))
+app.use(express.static(path.resolve(__dirname, 'public')))
+
+app.set('views', path.resolve(__dirname, 'src', 'views'))
+app.set('view engine', 'ejs')
+
 app.use(routes)
 
 app.listen(3000, () =>{
@@ -10,20 +16,3 @@ app.listen(3000, () =>{
     console.log("servidor rodando na rota 3000")
 })
  
-/*const express = require('express')
-const app = express()
-
-app.get('/', (req,res)=>{
-    res.send(`<form action="/" method="POST">
-        nome: <input type="text" name="nome">
-        <button>enviar</button> 
-        </form>`)
-})
-app.post('/', (req,res)=>{
-    res.send('Trantado seu post')
-})
-
-app.listen(3000, ()=>{
-    console.log("http://localhost:3000");
-    console.log("Servidor rodando na rorta 3000") 
-})*/

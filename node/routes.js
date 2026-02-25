@@ -1,6 +1,6 @@
 const express = require('express')
 const route = express.Router()
-const homeController = require('./controllers/homeControle')
+const homeController = require('./src/controllers/homeControle')
 
 route.get('/', homeController.paginaInicial)
 route.post('/', homeController.trataPost)
